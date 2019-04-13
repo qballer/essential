@@ -1,13 +1,13 @@
 import { Options } from "./options";
-import { pretty } from "./pretty";
+import {format} from 'prettier'
 
 export function renderHtmlToString(options:Options) {
-    return pretty(
+    return format(
         `<html>
         <head></head>
         <body>
             <x-${options.name}></x-${options.name}>
             <script src="./${options.name}.cmp.mjs" type="module"></script>
         </body>
-        </html>`)
+        </html>`, {semi:false, parser:'html'})
 }

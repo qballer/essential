@@ -4,8 +4,9 @@
   "description": "render web components boilerplate to file",
   "main": "dist/source/index.js",
   "scripts": {
+    "clean": "rm -rf temp",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run clean && node -r esm dist/test/test.spec.js"
   },
   "author": "Doron Tsur, <qballer@gmail.com>",
   "license": "MIT",
@@ -13,9 +14,12 @@
     "prettier": "^1.17.0"
   },
   "devDependencies": {
+    "@types/execa": "^0.9.0",
     "@types/node": "^11.13.4",
     "@types/prettier": "^1.16.1",
     "@types/puppeteer": "^1.12.3",
+    "esm": "^3.2.22",
+    "execa": "^1.0.0",
     "puppeteer": "^1.14.0",
     "typescript": "^3.4.3"
   }

@@ -1,10 +1,10 @@
 import { Options } from "./options";
-import { pretty } from "./pretty";
+import {format } from "prettier";
 
 export function renderJS(options: Options) {
-    return pretty(`
+    return format(`
         const template = document.createElement('template')
-        template.innerHTML = ${options.innerHTML}
+        template.innerHTML = '${options.innerHTML}'
 
         class X${casing(options.name)} extends HTMLElement {
             constructor() {
@@ -14,7 +14,8 @@ export function renderJS(options: Options) {
             }
         }
         
-        customElements.define('x-${options.name}', X${casing(options.name)})`
+        customElements.define('x-${options.name}', X${casing(options.name)})`,
+        {semi:false, parser: 'babel'}
     )
 }
 
