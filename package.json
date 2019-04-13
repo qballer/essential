@@ -1,8 +1,8 @@
 {
-  "name": "y",
+  "name": "essential",
   "version": "0.0.1",
   "description": "render web components boilerplate to file",
-  "main": "dist/index.js",
+  "main": "dist/source/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,9 @@
   },
   "devDependencies": {
     "@types/node": "^11.13.4",
-    "@types/prettier": "^1.16.1"
+    "@types/prettier": "^1.16.1",
+    "@types/puppeteer": "^1.12.3",
+    "puppeteer": "^1.14.0",
+    "typescript": "^3.4.3"
   }
 }
