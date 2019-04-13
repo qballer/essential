@@ -6,7 +6,9 @@
   "scripts": {
     "clean": "rm -rf temp",
     "build": "tsc",
-    "test": "npm run clean && node -r esm dist/test/test.spec.js"
+    "test": "npm run clean && npm run test:run",
+    "test:run": "node -r esm dist/test/test.spec.js",
+    "hero": "npm i && npm run test"
   },
   "author": "Doron Tsur, <qballer@gmail.com>",
   "license": "MIT",
